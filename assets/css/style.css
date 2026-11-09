@@ -1,0 +1,1570 @@
+/* =====================================================
+   CRYPTOLAB - MODERN GLASSMORPHISM DESIGN
+   ===================================================== */
+
+/* =============================
+   RESET & BODY
+============================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #eaf2ff;
+
+    /* Background modern */
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(22, 163, 74, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(59, 130, 246, 0.15),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 70% 85%,
+            rgba(20, 184, 166, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #07111f 0%,
+            #0b1d30 50%,
+            #071827 100%
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* =============================
+   SCROLLBAR
+============================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #08111f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #22c55e,
+        #16a34a
+    );
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+    position: fixed;
+
+    width: 250px;
+
+    top: 56px;
+    bottom: 0;
+
+    padding: 20px 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 22, 38, 0.97),
+            rgba(8, 15, 30, 0.98)
+        );
+
+    border-right:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        10px 0 35px rgba(0, 0, 0, 0.25);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 1000;
+}
+
+
+/* =============================
+   SIDEBAR BRAND
+============================= */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px 8px 22px;
+
+    margin-bottom: 8px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.brand-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #0f9f62
+        );
+
+    box-shadow:
+        0 8px 20px rgba(34, 197, 94, 0.28);
+}
+
+
+.sidebar-brand h2 {
+    margin: 0;
+
+    font-size: 21px;
+
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+.sidebar-brand small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #8fa3bd;
+
+    font-size: 11px;
+}
+
+
+/* =============================
+   MENU TITLE
+============================= */
+
+.menu-title {
+    margin:
+        24px 8px 8px;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    color: #6f859f;
+}
+
+
+/* =============================
+   SIDEBAR MENU
+============================= */
+
+.sidebar a {
+    display: block;
+
+    text-decoration: none;
+
+    color: #c7d3e2;
+
+    padding: 12px 14px;
+
+    margin: 5px 0;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* HOVER */
+
+.sidebar a:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    transform:
+        translateX(5px);
+}
+
+
+/* MENU ACTIVE */
+
+.sidebar .menu a.active {
+    color: #ffffff !important;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #0ea65b
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(22, 163, 74, 0.28);
+}
+
+
+/* ABOUT LINK */
+
+.sidebar-link {
+    margin-top: 12px !important;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+
+/* HR */
+
+.sidebar hr {
+    border: none;
+
+    height: 1px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    margin: 22px 0;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+    margin-left: 250px;
+
+    min-height: calc(100vh - 56px);
+
+    padding: 32px;
+
+    /* PENTING: transparan agar background body terlihat */
+    background: transparent;
+}
+
+
+/* =====================================================
+   GLASS EFFECT GLOBAL
+===================================================== */
+
+.welcome-box,
+.crypto-card,
+.algorithm-header,
+.algorithm-card,
+.algorithm-intro,
+.dashboard-card,
+.info-card,
+.stat-card,
+.dashboard-algorithm-card,
+.about-category,
+.technology-item,
+.dashboard-footer-card {
+
+    background:
+        rgba(15, 35, 55, 0.72);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =====================================================
+   WELCOME & CARD
+===================================================== */
+
+.welcome-box,
+.crypto-card {
+    padding: 25px;
+
+    border-radius: 20px;
+}
+
+
+.crypto-card {
+    text-align: center;
+
+    height: 100%;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.crypto-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   HALAMAN ALGORITMA
+===================================================== */
+
+.algorithm-page {
+    max-width: 900px;
+}
+
+
+.algorithm-header {
+    padding: 30px;
+
+    border-radius: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+.algorithm-card {
+    padding: 30px;
+
+    border-radius: 20px;
+}
+
+
+.algorithm-card h1,
+.algorithm-card h2,
+.algorithm-card h3,
+.algorithm-card h4,
+.algorithm-card h5,
+.algorithm-header h1,
+.algorithm-header h2,
+.algorithm-header h3 {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   RESULT BOX
+===================================================== */
+
+.result-box {
+    background:
+        rgba(3, 12, 24, 0.45);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 20px;
+
+    border-radius: 14px;
+}
+
+
+.result-text {
+    background:
+        rgba(2, 12, 25, 0.8);
+
+    color: #69f0a5;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    border-left:
+        4px solid #22c55e;
+
+    font-family: monospace;
+
+    font-size: 18px;
+
+    word-break: break-all;
+}
+
+
+/* =====================================================
+   ALGORITHM INTRO
+===================================================== */
+
+.algorithm-intro {
+    display: flex;
+
+    gap: 20px;
+
+    align-items: flex-start;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    margin-bottom: 25px;
+
+    border-left:
+        4px solid #22c55e;
+}
+
+
+.algorithm-icon {
+    width: 80px;
+    height: 80px;
+
+    min-width: 80px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.3),
+            rgba(59, 130, 246, 0.22)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.algorithm-intro:hover .algorithm-icon {
+    transform:
+        scale(1.08)
+        rotate(-3deg);
+}
+
+
+.algorithm-intro h1,
+.algorithm-intro h2,
+.algorithm-intro h3 {
+    color: #ffffff;
+
+    margin-top: 0;
+}
+
+
+.algorithm-intro p {
+    color: #aebfd2;
+
+    line-height: 1.7;
+}
+
+
+.formula-box {
+    background:
+        rgba(4, 20, 35, 0.55);
+
+    border-left:
+        4px solid #22c55e;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    color: #dce8f5;
+}
+
+
+.formula-box code {
+    color: #69f0a5;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   ABOUT CRYPTOLAB
+===================================================== */
+
+.about-category {
+    padding: 22px;
+
+    border-radius: 18px;
+
+    height: 100%;
+
+    border-left:
+        4px solid #22c55e;
+
+    color: #c9d7e6;
+}
+
+
+.about-category h1,
+.about-category h2,
+.about-category h3,
+.about-category h4,
+.about-category h5 {
+    color: #ffffff;
+}
+
+
+.about-category ul {
+    margin-bottom: 0;
+
+    padding-left: 20px;
+}
+
+
+.about-category li {
+    margin-bottom: 8px;
+}
+
+
+/* TECHNOLOGY */
+
+.technology-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.technology-item {
+    padding: 20px;
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease;
+}
+
+
+.technology-item:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(34, 197, 94, 0.5);
+}
+
+
+.technology-item strong {
+    font-size: 18px;
+
+    color: #ffffff;
+}
+
+
+.technology-item span {
+    color: #9db0c4;
+
+    font-size: 14px;
+}
+
+
+/* CRYPTO FLOW */
+
+.crypto-flow {
+    margin-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.crypto-flow div:not(.arrow) {
+    background:
+        rgba(15, 40, 60, 0.75);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    color: #dce9f5;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+}
+
+
+.crypto-flow .arrow {
+    color: #22c55e;
+
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard {
+    max-width: 1200px;
+}
+
+
+.dashboard-page {
+    padding: 10px;
+}
+
+
+/* =====================================================
+   HERO DASHBOARD
+===================================================== */
+
+.dashboard-hero {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 55, 65, 0.88),
+            rgba(20, 45, 80, 0.85)
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    border-radius: 24px;
+
+    padding: 50px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+
+.dashboard-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(34, 197, 94, 0.16);
+
+    top: -100px;
+    right: -70px;
+
+    filter:
+        blur(30px);
+}
+
+
+.hero-content,
+.hero-icon {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.hero-content {
+    max-width: 700px;
+}
+
+
+.hero-badge {
+    display: inline-block;
+
+    background:
+        rgba(34, 197, 94, 0.18);
+
+    border:
+        1px solid rgba(34, 197, 94, 0.35);
+
+    color: #7cf7aa;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.dashboard-hero h1 {
+    font-size: 42px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    margin-bottom: 15px;
+}
+
+
+.dashboard-hero h1 span {
+    color: #69f0a5;
+}
+
+
+.dashboard-hero p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #b9c9dc;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-icon {
+    font-size: 100px;
+
+    min-width: 150px;
+
+    text-align: center;
+
+    filter:
+        drop-shadow(
+            0 10px 20px
+            rgba(34, 197, 94, 0.25)
+        );
+}
+
+
+/* =====================================================
+   STATISTIK
+===================================================== */
+
+.stats-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+}
+
+
+.stat-card {
+    padding: 20px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease;
+}
+
+
+.stat-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(34, 197, 94, 0.4);
+}
+
+
+.stat-icon {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.28),
+            rgba(20, 184, 166, 0.22)
+        );
+
+    border-radius: 15px;
+
+    font-size: 25px;
+}
+
+
+.stat-card h3 {
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+.stat-card p {
+    margin: 4px 0 0;
+
+    color: #9fb2c8;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.algorithm-section {
+    margin-bottom: 45px;
+}
+
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+
+.section-title h2 {
+    color: #ffffff;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+.section-title p {
+    color: #a9bbcf;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   ALGORITHM GRID
+===================================================== */
+
+.algorithm-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   DASHBOARD ALGORITHM CARD
+===================================================== */
+
+.dashboard-algorithm-card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border 0.3s ease;
+}
+
+
+.dashboard-algorithm-card:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(34, 197, 94, 0.45);
+
+    box-shadow:
+        0 22px 40px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+.dashboard-algorithm-card .card-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.3),
+            rgba(59, 130, 246, 0.22)
+        );
+
+    border-radius: 17px;
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+
+.dashboard-algorithm-card h3 {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    margin-bottom: 10px;
+}
+
+
+.dashboard-algorithm-card p {
+    color: #a8bbcf;
+
+    line-height: 1.6;
+
+    min-height: 75px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   DASHBOARD FOOTER CARD
+===================================================== */
+
+.dashboard-footer-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22, 101, 52, 0.55),
+            rgba(8, 65, 70, 0.55)
+        );
+
+    border-radius: 22px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    border:
+        1px solid rgba(34, 197, 94, 0.25);
+}
+
+
+.dashboard-footer-card h2 {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+.dashboard-footer-card p {
+    color: #b9cbd8;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.btn-success {
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #159447
+        );
+
+    box-shadow:
+        0 8px 18px
+        rgba(34, 197, 94, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.btn-success:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #2ddd70,
+            #16a34a
+        );
+
+    box-shadow:
+        0 12px 24px
+        rgba(34, 197, 94, 0.3);
+}
+
+
+/* =====================================================
+   BOOTSTRAP CARD
+===================================================== */
+
+.algorithm-card .card,
+.row.g-3.mb-4 .card {
+    background:
+        rgba(9, 29, 48, 0.8);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    color: #dce7f2;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.algorithm-card .card:hover,
+.row.g-3.mb-4 .card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+.algorithm-card .card h5,
+.row.g-3.mb-4 .card h5 {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+.algorithm-card .card p,
+.row.g-3.mb-4 .card p {
+    color: #a9bbcf;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.row.g-3.mb-4 .card h2 {
+    color: #69f0a5;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   TEXT UMUM
+===================================================== */
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+    color: #ffffff;
+}
+
+
+.main-content p,
+.main-content li,
+.main-content label {
+    color: #c2d0df;
+}
+
+
+.algorithm-card h4 {
+    color: #69f0a5;
+
+    font-weight: 700;
+}
+
+
+.algorithm-card hr {
+    border-color:
+        rgba(255, 255, 255, 0.1);
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-control,
+.form-select {
+    background:
+        rgba(5, 20, 35, 0.65);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+    background:
+        rgba(5, 20, 35, 0.85);
+
+    color: #ffffff;
+
+    border-color:
+        #22c55e;
+
+    box-shadow:
+        0 0 0 0.2rem
+        rgba(34, 197, 94, 0.15);
+}
+
+
+.form-control::placeholder {
+    color: #7e91a8;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    margin-left: 250px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    color: #91a6bd;
+
+    background:
+        rgba(4, 16, 29, 0.75);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 992px) {
+
+    .algorithm-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .stats-section {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: relative;
+
+        top: 0;
+
+        width: 100%;
+
+        height: auto;
+
+        overflow-y: visible;
+    }
+
+    .main-content,
+    .footer {
+        margin-left: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .dashboard-hero {
+        padding: 30px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .dashboard-hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-icon {
+        font-size: 70px;
+    }
+
+    .algorithm-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .algorithm-summary {
+        gap: 25px;
+    }
+
+    .technology-list {
+        grid-template-columns: 1fr;
+    }
+
+    .crypto-flow {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .crypto-flow .arrow {
+        transform: rotate(90deg);
+    }
+
+    .algorithm-intro {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .algorithm-page {
+        max-width: 100%;
+    }
+
+    .algorithm-header,
+    .algorithm-card,
+    .algorithm-intro {
+        padding: 20px;
+    }
+
+    .algorithm-icon {
+        width: 65px;
+        height: 65px;
+
+        min-width: 65px;
+
+        font-size: 35px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ========================================= */
+/* FIX WARNA TEXT UNTUK BACKGROUND GELAP */
+/* Letakkan di bagian paling bawah CSS */
+/* ========================================= */
+
+/* Judul utama */
+.dashboard-hero h1,
+.dashboard-footer-card h2,
+.algorithm-header h1,
+.algorithm-card h1,
+.algorithm-card h2,
+.algorithm-card h3,
+.algorithm-card h4,
+.algorithm-card h5,
+.algorithm-card h6,
+.algorithm-section h1,
+.algorithm-section h2,
+.algorithm-section h3,
+.algorithm-section h4,
+.algorithm-section h5,
+.section-title h2 {
+    color: #ffffff !important;
+}
+
+
+/* Text / paragraf */
+.dashboard-hero p,
+.dashboard-footer-card p,
+.algorithm-card p,
+.algorithm-section p,
+.section-title p,
+.info-card p {
+    color: #d6e1ec !important;
+}
+
+
+/* STATISTIK */
+.stat-card h3,
+.stat-card p {
+    color: #ffffff !important;
+}
+
+
+/* Angka statistik */
+.stat-card h3 {
+    color: #ffffff !important;
+}
+
+
+/* Judul dan isi algoritma */
+.dashboard-algorithm-card h3,
+.dashboard-algorithm-card h4,
+.dashboard-algorithm-card h5 {
+    color: #ffffff !important;
+}
+
+.dashboard-algorithm-card p {
+    color: #cbd5e1 !important;
+}
+
+
+/* Card algoritma biasa */
+.algorithm-card .card {
+    color: #ffffff;
+}
+
+.algorithm-card .card h5,
+.algorithm-card .card h4,
+.algorithm-card .card h3,
+.algorithm-card .card h2 {
+    color: #ffffff !important;
+}
+
+.algorithm-card .card p {
+    color: #cbd5e1 !important;
+}
+
+
+/* Dashboard utama */
+.dashboard-page {
+    color: #ffffff;
+}
+
+
+/* Judul Pilih Algoritma */
+.dashboard-page h1,
+.dashboard-page h2,
+.dashboard-page h3,
+.dashboard-page h4,
+.dashboard-page h5 {
+    color: #ffffff;
+}
+
+
+/* Judul section */
+.section-title {
+    color: #ffffff;
+}
+
+
+/* Info card */
+.info-card h1,
+.info-card h2,
+.info-card h3,
+.info-card h4,
+.info-card h5,
+.info-card h6 {
+    color: #ffffff !important;
+}
+
+
+/* Welcome box */
+.welcome-box {
+    color: #ffffff;
+}
+
+.welcome-box h1,
+.welcome-box h2,
+.welcome-box h3,
+.welcome-box h4 {
+    color: #ffffff !important;
+}
+
+.welcome-box p {
+    color: #d6e1ec !important;
+}
+
+
+/* Crypto card */
+.crypto-card {
+    color: #ffffff;
+}
+
+.crypto-card h1,
+.crypto-card h2,
+.crypto-card h3,
+.crypto-card h4,
+.crypto-card h5 {
+    color: #ffffff !important;
+}
+
+.crypto-card p {
+    color: #cbd5e1 !important;
+}
+
+
+/* ========================================= */
+/* KHUSUS YANG TERLIHAT HITAM DI SCREENSHOT */
+/* ========================================= */
+
+/* Deskripsi di bawah statistik */
+.stats-section p {
+    color: #d6e1ec !important;
+}
+
+
+/* Deskripsi algoritma */
+.algorithm-grid p,
+.dashboard-algorithm-card p {
+    color: #cbd5e1 !important;
+}
+
+
+/* Heading dasar matematika */
+.algorithm-section h2,
+.algorithm-section h3 {
+    color: #ffffff !important;
+}
+
+
+/* Text Bootstrap yang mungkin memakai warna gelap */
+.text-dark {
+    color: #ffffff !important;
+}
+
+.text-muted {
+    color: #cbd5e1 !important;
+}
+
+
+/* Semua label dalam konten utama */
+.main-content {
+    color: #e5edf5;
+}
